@@ -29,9 +29,9 @@ class TestUnicornItems(unittest.TestCase):
         login_element.click()
         WebDriverWait(driver, 6).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, "/html/body/div[3]/div[3]/div/div/article/div/div/div[1]/div[1]/ul")))
-        login_element = driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div/div/article/div/div/div[1]/div[1]/ul")
+        alert_message = driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div/div/article/div/div/div[1]/div[1]/ul")
 
-        assert "ERROR: INCORRECT USERNAME OR PASSWORD" in login_element.text
+        assert "ERROR: INCORRECT USERNAME OR PASSWORD" in alert_message.text
 
     def tearDown(self):
         self.driver.close()
